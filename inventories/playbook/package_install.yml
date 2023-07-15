@@ -1,0 +1,9 @@
+- hosts: servers
+  become: yes
+  tasks:
+    - name: install packages
+      apt: name={{item}} state=latest
+      with_items:
+        - docker.io
+        - docker-compose
+        - awscli
